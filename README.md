@@ -13,7 +13,7 @@ I'm a **Computer Science Student** at **Bannari Amman Institute of Technology** 
 - **Backend**: Node.js, Express.js  
 - **Database**: MongoDB  
 - **Version Control**: Git, GitHub  
-- **Languages**: C, Java
+- **Languages**: C, Java , SQL
 
 ---
 
