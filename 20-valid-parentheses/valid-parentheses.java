@@ -1,35 +1,20 @@
 class Solution {
     public boolean isValid(String s) {
-     /*   String prev="";
-        while(!s.equals(prev)){
-            prev=s;
-          s=  s.replace("()","");
-          s=  s.replace("[]","");
-           s= s.replace("{}","");
-        }
-        return s.isEmpty();*/
-        Stack<Character>para=new Stack<>();
-        boolean isvalid=true;
-        char[]paran=s.toCharArray();
+        Stack<Character>st=new Stack<>();
         for(int i=0;i<s.length();i++){
-            char ch=paran[i];
-            if(ch=='['||ch=='{'||ch=='('){
-                para.push(ch);
+            char ch=s.charAt(i);
+            if(ch=='('||ch=='{'||ch=='['){
+                st.push(ch);
             }
-            else if(ch==']'||ch=='}'||ch==')'){
-                if(para.isEmpty()){
-                    isvalid=false;
-                    break;
-                 } char last=para.pop();
-                if(ch==')'&& last=='('|| ch==']' && last=='[' || ch=='}'&& last=='{'){
-                  isvalid=true;
-                }else{
-                    isvalid=false;
-                    break;
-                }
+            else if(ch==')'||ch=='}'||ch==']'){
+                if(st.isEmpty())return false;
+                  char last=st.pop();
+                  if(ch==')'&&last!='('||ch=='}'&&last!='{'||ch==']'&&last!='['){
+                    return false;
+                  }
             }
+
         }
-        return isvalid && para.isEmpty();
+        return st.isEmpty();
     }
 }
-
