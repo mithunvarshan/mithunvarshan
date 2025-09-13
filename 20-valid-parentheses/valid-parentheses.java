@@ -9,6 +9,7 @@ class Solution {
         }
         return s.isEmpty();*/
         Stack<Character>para=new Stack<>();
+        boolean isvalid=true;
         char[]paran=s.toCharArray();
         for(int i=0;i<s.length();i++){
             char ch=paran[i];
@@ -16,13 +17,19 @@ class Solution {
                 para.push(ch);
             }
             else if(ch==']'||ch=='}'||ch==')'){
-                if(para.isEmpty())return false;
-                char last=para.pop();
-                if(ch==')'&& last!='('|| ch==']' && last!='[' || ch=='}'&& last!='{'){
-                return false;
+                if(para.isEmpty()){
+                    isvalid=false;
+                    break;
+                 } char last=para.pop();
+                if(ch==')'&& last=='('|| ch==']' && last=='[' || ch=='}'&& last=='{'){
+                  isvalid=true;
+                }else{
+                    isvalid=false;
+                    break;
                 }
             }
         }
-        return para.isEmpty();
+        return isvalid && para.isEmpty();
     }
 }
+
