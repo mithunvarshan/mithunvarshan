@@ -8,6 +8,7 @@ class Solution {
         int max=Collections.max(list);
         System.out.print(max);
         int count=0;
+        if(max<=1)return nums.length;
         for(int i=0;i<nums.length;i++){
             if(map.getOrDefault(nums[i],0)>=max){
                 count++;
