@@ -5,8 +5,7 @@ class Solution {
             int diff=target-nums[i];
             if(sum.containsKey(diff)){
                 return new int[]{
-                    sum.get(diff),i
-                    };
+                    sum.get(diff),i};
             }
             sum.put(nums[i], i);
         }
