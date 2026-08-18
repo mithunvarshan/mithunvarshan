@@ -10,7 +10,7 @@ I'm a **Computer Science Student** at **Bannari Amman Institute of Technology** 
 
 ## 🚀 Tech Stack
 - **Frontend**: React.js, HTML, CSS
-- **Backend**: Node.js, Express.js  
+- **Backend**: Springboot 
 - **Database**: MongoDB  
 - **Version Control**: Git, GitHub  
 - **Languages**: C, Java , SQL
